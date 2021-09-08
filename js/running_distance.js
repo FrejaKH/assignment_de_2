@@ -1,3 +1,4 @@
+/*created by René Seebach */
 'use strict'
 
 function runningDistance(){
@@ -5,25 +6,24 @@ function runningDistance(){
     let kmTime = document.getElementById('numberForRunningTime').value;
 
     let test = parseInt(kmDistance);
-    console.log(test);
-    
+  
+    /* substing three times */
     let hours = kmTime.substring(0,2);
     let minutes = kmTime.substring(2,4);
     let seconds = kmTime.substring(4,6);
 
     if (kmTime != 0 && kmDistance != 0){
 
-    /*let time4 = (+hours) + (+minutes) * 60 + (+seconds) * 3600;*/
-    let time4 = (+hours) * 60 * 60 + (+minutes) * 60 + (+seconds);
-    console.log(time4 + "");
+    /*  */  
+    let sec = (+hours) * 60 * 60 + (+minutes) * 60 + (+seconds);
      
     /* gets seconds per km*/ 
-    let kmTime = time4 / test -0;
-    console.log(kmTime);
-
-    let h = Math.floor(kmTime / 3600);
-    let m = Math.floor(kmTime % 3600 / 60);
-    let s = Math.floor(kmTime % 3600 % 60);
+    let kmTimePerHour = sec / kmDistance -0;
+  
+    /* converts seconds to the user: hours, minutes and seconds */
+    let h = Math.floor(kmTimePerHour / 3600);
+    let m = Math.floor(kmTimePerHour % 3600 / 60);
+    let s = Math.floor(kmTimePerHour % 3600 % 60);
 
         console.log('Hours: ' + h);
         console.log('Minutes: ' + m);
