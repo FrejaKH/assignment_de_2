@@ -14,7 +14,7 @@ function runningDistance(){
 
     if (kmTime != 0 && kmDistance != 0){
 
-    /*  */  
+    /* Get seconds */  
     let sec = (+hours) * 60 * 60 + (+minutes) * 60 + (+seconds);
      
     /* gets seconds per km*/ 
@@ -25,9 +25,7 @@ function runningDistance(){
     let m = Math.floor(kmTimePerHour % 3600 / 60);
     let s = Math.floor(kmTimePerHour % 3600 % 60);
 
-        console.log('Hours: ' + h);
-        console.log('Minutes: ' + m);
-        console.log('seconds: ' + s);
+    
 
     return document.getElementById('result').innerHTML = "= " + h + " hours, " +  m + " minutes, " + s + " seconds per kilometer";
     }else{  
