@@ -5,41 +5,33 @@ function rollDice() {
     let experimentsNumber = document.getElementById('numberForExperiments').value;
     let desiredOutcome = document.getElementById('numberForDesiredOutcome').value;
 
-    let outcomeFirst = desiredOutcome.substring(0,2) -0;
-    let outcomeSecond = desiredOutcome.substring(2,4) -0;  
+    let outcomeFirst = desiredOutcome.substring(0,1) -0;
+    let outcomeSecond = desiredOutcome.substring(1,2) -0;
+    let count = 0;  
+    let findNumber = experimentsNumber;
     
-    console.log(outcomeFirst + " See input one");
-    console.log(outcomeSecond + " See input two");
-
-    let total = 0;
-    let outcomeFirstResult = 0;
-    let outcomeSecondResult = 0;
+    /* creates two loops where the first one counts until the outcomes and the outer counts times running*/
     if(outcomeFirst != 0 && outcomeSecond != 0 && outcomeFirst <= 12 && outcomeSecond <= 12){
-
-        for(let i = 0; i <= experimentsNumber; i++){
-            let RandomNumber = Math.floor(Math.random() * 12) + 1;
-            console.log(RandomNumber + " random number");
-            if(RandomNumber == outcomeFirst){
-                outcomeFirstResult ++;
+    /* first while loop is counting down on findNumber */
+      while(findNumber > 0){
+          /* second while loop is checking how many times it takes to reach desired outcome from variable outcomeFirst and outcomeSecond. */
+        while(true){
+            let RandomNumberDice = Math.floor(Math.random() * 6) + 1;
+            let RandomNumberDice2 = Math.floor(Math.random() * 6) + 1;
+            if(RandomNumberDice == outcomeFirst && RandomNumberDice2 == outcomeSecond){
+                findNumber--;
+                break;
             }
-            if(RandomNumber == outcomeSecond){
-                outcomeSecondResult ++
-            }
-
-            total += RandomNumber;
-        
+            count++;
         }
-        /* gets the average from experiment */
-        let resultAverage = total / experimentsNumber;
+      }
 
-        /*mulige udfald / gunstige udfald kunne være en løsning: eks. 36 muligheder og to gunstige udfald outcomeFirst + outcomeSecond  */
-
-        console.log(outcomeFirstResult + " antal mulige slag et");
-
-        console.log(outcomeSecondResult + " antal mulige slag to");
     
+        /* gets the average from experiment: experiment / total amount of calculate the numbers that took to get the desired outcome.*/
+        let resultAverage = experimentsNumber / count;
+        console.log(resultAverage + " average");
     
-        return document.getElementById('resultDice').innerHTML = "=  First desired outcome: " + outcomeFirstResult + " times. Second desired outcome:  " + outcomeSecondResult +  " times. Average of "+ experimentsNumber + " experiment: " +  resultAverage.toFixed(1) +  " !"
+        return document.getElementById('resultDice').innerHTML = "= " + resultAverage.toFixed(5) +  " Average to get desired outcome!"
 
     }else
         return document.getElementById('resultDice').innerHTML = "= Error! you cannot but zero value into the fields!"
