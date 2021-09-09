@@ -11,7 +11,7 @@ function rollDice() {
     let findNumber = experimentsNumber;
     
     /* creates two loops where the first one counts until the outcomes and the outer counts times running*/
-    if(outcomeFirst != 0 && outcomeSecond != 0 && outcomeFirst <= 12 && outcomeSecond <= 12){
+    if(outcomeFirst != 0 && outcomeSecond != 0){
     /* first while loop is counting down on findNumber */
       while(findNumber > 0){
           /* second while loop is checking how many times it takes to reach desired outcome from variable outcomeFirst and outcomeSecond. */
