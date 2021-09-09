@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheet/style.css" >
+    <script src="../js/dice_calculations.js"></script>
+    <title>Dice calculation game</title>
+</head>
+<body>
+    <div class="pageStructure">
+        <div class="exerciseDiv"></div>
+           <h1>29.6.1. Assignment DE.2.0</h1>
+           <h3>Caluculate average on rolling dice with experiments</h3>
+               <p>Enter number of experiments and desired outcome<br/></p>
+               <input class="numberForExperiments" type="number" id="numberForExperiments" placeholder="Enter experiments" required>
+               <input class="runningTimeInput" type="numbers" id="numberForDesiredOutcome" placeholder="Desired outcome" maxlength="2" required>
+               <label id='resultDice'></label>
+               <br>
+               <br>
+               <button class="buttonCustomized" onclick="rollDice()">Check</button>
+        </div>
+       </div> 
+    
+</body>
+</html>
