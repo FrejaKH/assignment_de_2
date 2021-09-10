@@ -7,7 +7,7 @@ function rollDice() {
 
     let outcomeFirst = desiredOutcome.substring(0,1) -0;
     let outcomeSecond = desiredOutcome.substring(1,2) -0;
-    let count = 0;  
+    let count = 1;  
     let findNumber = experimentsNumber;
     
     /* creates two loops where the first one counts until the outcomes and the outer counts times running*/
