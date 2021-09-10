@@ -18,7 +18,7 @@ function rollDice() {
         while(true){
             let RandomNumberDice = Math.floor(Math.random() * 6) + 1;
             let RandomNumberDice2 = Math.floor(Math.random() * 6) + 1;
-            if(RandomNumberDice == outcomeFirst && RandomNumberDice2 == outcomeSecond){
+            if((RandomNumberDice == outcomeFirst && RandomNumberDice2 == outcomeSecond) || (RandomNumberDice == outcomeSecond && RandomNumberDice2 == outcomeFirst)){
                 findNumber--;
                 break;
             }
